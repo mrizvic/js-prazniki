@@ -15,8 +15,7 @@ Popravek 2017: 2. januar je spet aktualen.
 
 Strežnik požememo z nodejs ter po želji dodamo ENVIRONMENT spremenljivki
 ```
-$
-APP_HOST=127.0.0.2 APP_PORT=8080 nodejs prazniki.js
+$ APP_HOST=127.0.0.2 APP_PORT=8080 nodejs prazniki.js
 [2018-02-12 21:09:57.524] [INFO]  PID: 29306
 [2018-02-12 21:09:57.528] [INFO]  Application name: /home/mrizvic/echelon-web/api.dmz6.net/nodecode/datum/GITHUB/prazniki.js
 [2018-02-12 21:09:57.619] [LOG]   Listening at http://127.0.0.2:8080
