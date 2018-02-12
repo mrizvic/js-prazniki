@@ -1,0 +1,45 @@
+{
+  "name": "prazniki",
+  "version": "0.0.2",
+  "description": "Get properties about particular date. Boolean variables returned: holiday, businessday, weekend, leapyear. Other variables: datum, weekday, holiday_name",
+  "main": "prazniki.js",
+  "dependencies": {
+    "console-stamp": "~0.2.4",
+    "express": "~4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrizvic/js-prazniki.git"
+  },
+  "keywords": [
+    "datum",
+    "vikend",
+    "delavnik",
+    "delavniki",
+    "praznik",
+    "prazniki",
+    "dela prosti dnevi",
+    "date",
+    "info",
+    "holiday",
+    "holidays",
+    "businessday",
+    "businessdays",
+    "workday",
+    "workdays",
+    "slovenian",
+    "slovenija",
+    "slovenski",
+    "sloveniji",
+    "slovenia"
+  ],
+  "author": "Marko Rizvic",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/mrizvic/js-prazniki/issues"
+  }
+}
