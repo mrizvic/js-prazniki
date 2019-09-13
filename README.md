@@ -100,3 +100,6 @@ $ curl -s http://127.0.0.1:8007/getTime/epoch
 
 Slednji klic vrne število sekund ter milisekund (ločeno s piko) od 1.1.1970 00:00:00.
 
+## Kava
+Ce vam tole dobro sluzi se priporocam za kaksno kavo :) https://ko-fi.com/markor
+
