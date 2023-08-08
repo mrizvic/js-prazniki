@@ -83,6 +83,8 @@ V okviru klicev s parametrom  `now` je možno pridobiti tudi informacijo v kakš
 ```
 $ curl http://127.0.0.1:8007/tariff/now
 MT
+$ curl http://127.0.0.1:8007/tariff2024/now
+{"datum":"8.8.2023","holiday":false,"businessday":true,"weekend":false,"weekday":2,"leapyear":false,"tariff2024":4}
 ```
 Poizvedovanje o tarifnem obdobju v primeru datumskega klica (npr: /datum/tariff/2016/1/1) ne bo uspelo.
 

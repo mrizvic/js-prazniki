@@ -96,6 +96,36 @@ Date.prototype.addDays = function(days)
     return dat;
 }
 
+var getTariff2024 = function(isBusinessDay) {
+    const currentHour = new Date().getHours();
+    const currentDayOfWeek = new Date().getDay(); // 0 (Sunday) - 6 (Saturday)
+    const currentMonth = new Date().getMonth() + 1; // 0-indexed, so we add 1
+
+    const isHighSeason = [11, 12, 1, 2].includes(currentMonth);
+    const isLowSeason = [3, 4, 5, 6, 7, 8, 9, 10].includes(currentMonth);
+    //const isWorkingDay = currentDayOfWeek >= 2 && currentDayOfWeek <= 6; // 2 to 6 represent Monday to Friday
+    const isWeekend = currentDayOfWeek === 0 || currentDayOfWeek === 1; // 0 and 1 represent Sunday and Saturday
+
+    let tariff;
+
+    if (currentHour >= 0 && currentHour < 6) {
+        tariff = isHighSeason && isBusinessDay ? 3 : (isLowSeason && isWeekend ? 5 : 4);
+    } else if (currentHour > 5 && currentHour < 14) {
+        tariff = isHighSeason && isBusinessDay ? 1 : (isLowSeason && isWeekend ? 3 : 2);
+    } else if (currentHour > 13 && currentHour < 16) {
+        tariff = isHighSeason && isBusinessDay ? 2 : (isLowSeason && isWeekend ? 4 : 3);
+    } else if (currentHour > 15 && currentHour < 20) {
+        tariff = isHighSeason && isBusinessDay ? 1 : (isLowSeason && isWeekend ? 3 : 2);
+    } else if (currentHour > 19 && currentHour < 24) {
+        tariff = isHighSeason && isBusinessDay ? 3 : (isLowSeason && isWeekend ? 5 : 4);
+    } else {
+        tariff = 0;
+    }
+
+    return tariff;
+}
+
+
 var getDateInfo = function(dateInput) {
     var resp = {};
     var date = new Date(dateInput);
@@ -219,6 +249,11 @@ app.get('/:cmd/now', function(req, res) {
                 resp[cmd] = 'VT';
         }
         res.send(resp[cmd]);
+        return;
+    } else if (cmd == 'tariff2024') {
+        var isBusinessDay = resp['businessday'];
+        resp[cmd] = getTariff2024(isBusinessDay);
+        res.send(resp);
         return;
     } else {
       if (typeof resp[cmd] === 'undefined') {
