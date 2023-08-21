@@ -104,7 +104,7 @@ var getTariff2024 = function(isBusinessDay) {
     const isHighSeason = [11, 12, 1, 2].includes(currentMonth);
     const isLowSeason = [3, 4, 5, 6, 7, 8, 9, 10].includes(currentMonth);
     //const isWorkingDay = currentDayOfWeek >= 2 && currentDayOfWeek <= 6; // 2 to 6 represent Monday to Friday
-    const isWeekend = currentDayOfWeek === 0 || currentDayOfWeek === 1; // 0 and 1 represent Sunday and Saturday
+    const isWeekend = currentDayOfWeek === 0 || currentDayOfWeek === 6; // 0 and 6 represent Sunday and Saturday
 
     let tariff;
 
