@@ -108,19 +108,14 @@ var getTariff2024 = function(isBusinessDay) {
 
     let tariff;
 
-    if (currentHour >= 0 && currentHour < 6) {
-        tariff = isHighSeason && isBusinessDay ? 3 : (isLowSeason && isWeekend ? 5 : 4);
-    } else if (currentHour > 5 && currentHour < 14) {
-        tariff = isHighSeason && isBusinessDay ? 1 : (isLowSeason && isWeekend ? 3 : 2);
-    } else if (currentHour > 13 && currentHour < 16) {
-        tariff = isHighSeason && isBusinessDay ? 2 : (isLowSeason && isWeekend ? 4 : 3);
-    } else if (currentHour > 15 && currentHour < 20) {
-        tariff = isHighSeason && isBusinessDay ? 1 : (isLowSeason && isWeekend ? 3 : 2);
-    } else if (currentHour > 19 && currentHour < 24) {
-        tariff = isHighSeason && isBusinessDay ? 3 : (isLowSeason && isWeekend ? 5 : 4);
-    } else {
-        tariff = 0;
-    }
+         if (currentHour >=  0 && currentHour < 6)  { tariff = isHighSeason && isBusinessDay ? 3 : (isLowSeason && isWeekend ? 5 : 4); }
+    else if (currentHour ==  6)                     { tariff = isHighSeason && isBusinessDay ? 2 : (isLowSeason && isWeekend ? 4 : 3); }
+    else if (currentHour >   6 && currentHour < 14) { tariff = isHighSeason && isBusinessDay ? 1 : (isLowSeason && isWeekend ? 3 : 2); }
+    else if (currentHour >  13 && currentHour < 16) { tariff = isHighSeason && isBusinessDay ? 2 : (isLowSeason && isWeekend ? 4 : 3); }
+    else if (currentHour >  15 && currentHour < 20) { tariff = isHighSeason && isBusinessDay ? 1 : (isLowSeason && isWeekend ? 3 : 2); }
+    else if (currentHour >  19 && currentHour < 22) { tariff = isHighSeason && isBusinessDay ? 2 : (isLowSeason && isWeekend ? 4 : 3); }
+    else if (currentHour >  21 && currentHour < 24) { tariff = isHighSeason && isBusinessDay ? 3 : (isLowSeason && isWeekend ? 5 : 4); }
+    else { tariff = 0; }
 
     return tariff;
 }
